@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Calculator</title>
+</head>
+<body>
+	<h1>Calculator</h1>
+	<label for="fnum">First number:</label>
+	<input type="number" name="fnum" id="fnum"><br><br>
+
+	<label for="snum">Second number:</label>
+	<input type="number" name="snum" id="snum"><br><br>
+
+	<label for="op">Select operator</label>
+	<select id="op">
+		<option>+</option>
+		<option>-</option>
+		<option>*</option>
+		<option>/</option>
+	</select><br><br>
+
+	<button type="button" onclick="myFunction()">Click</button>
+	<!-- <label for="ans">Answer is</label> -->
+	<p> answer <input id="ans"></p>
+
+	<script type="text/javascript">
+		function myFunction()
+		{
+			var num1,num2,operator,res;
+			num1=parseInt(document.getElementById("fnum").value);
+			
+			num2=parseInt(document.getElementById("snum").value);
+			
+			operator=document.getElementById("op").value;
+			
+			if(operator=='+')
+			{
+				add(num1,num2);
+			}
+			else if(operator=='-')
+			{
+				difference(num1,num2);
+			}
+			else if(operator=='*')
+			{
+				multiplication(num1,num2);
+			}
+			else
+			{
+				division(num1,num2);
+			}
+		}
+
+		function add(num1,num2)
+		{
+			var sum=num1+num2;
+			document.getElementById("ans").value=sum;
+		}
+		function difference(num1,num2)
+		{
+			var diff=num1-num2;
+			document.getElementById("ans").value=diff;
+		}
+		function multiplication(num1,num2)
+		{
+			var mul=num1*num2;
+			document.getElementById("ans").value=mul;
+		}
+		function division(num1,num2)
+		{
+			var div=num1/num2;
+			document.getElementById("ans").value=div;
+		}
+	</script>
+
+</body>
+</html>
